@@ -1,0 +1,11 @@
+#spring boot启动端口
+server:
+  port: 9090
+
+#mysql配置信息
+spring:
+  datasource:
+    driver-cLass-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/vuespring?servenTimezone=GMT%2b8
+    username: root
+    password: root
