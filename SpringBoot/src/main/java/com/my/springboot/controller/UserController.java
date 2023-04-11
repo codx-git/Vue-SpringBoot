@@ -34,6 +34,11 @@ public class UserController {
         return userService.removeById(id);
     }
 
+    //批量删除
+    @PostMapping("/del/batch")
+    public boolean deleteBatch(@RequestBody List<Integer> ids){
+        return userService.removeByIds(ids);
+    }
     /*
     function:分页查询
     接口路径：/user/page?pageNum=1&pageSize=5
@@ -71,6 +76,7 @@ public class UserController {
         queryWrapper.like("nickname", nickname);
         queryWrapper.like("email", email);
         queryWrapper.like("address", address);
+        queryWrapper.orderByDesc("id");
         return userService.page(page, queryWrapper);
     }
 
